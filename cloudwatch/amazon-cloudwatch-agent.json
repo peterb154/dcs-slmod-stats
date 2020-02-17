@@ -1,0 +1,163 @@
+{
+	"logs": {
+		"logs_collected": {
+			"files": {
+				"collect_list": [
+					{
+						"file_path": "C:\\Users\\peterb154\\Saved Games\\DCS.openbeta_server\\Logs\\dcs.log",
+						"log_group_name": "dcs",
+						"log_stream_name": "dcs.log"
+					},
+					{
+						"file_path": "C:\\Users\\peterb154\\Saved Games\\DCS.openbeta_server\\Logs\\DCS-SRS-AutoConnect.log",
+						"log_group_name": "dcs",
+						"log_stream_name": "DCS-SRS-AutoConnect.log"
+					},
+					{
+						"file_path": "C:\\Users\\peterb154\\Saved Games\\DCS.openbeta_server\\Logs\\debrief.log",
+						"log_group_name": "dcs",
+						"log_stream_name": "debrief.log"
+					},
+					{
+						"file_path": "C:\\Users\\peterb154\\Saved Games\\DCS.openbeta_server\\Logs\\voice_chat.log",
+						"log_group_name": "dcs",
+						"log_stream_name": "voice_chat.log"
+					},
+					{
+						"file_path": "C:\\Users\\peterb154\\Saved Games\\DCS.openbeta_server\\Slmod\\Slmod.log",
+						"log_group_name": "dcs",
+						"log_stream_name": "Slmod.log"
+					},
+					{
+						"file_path": "C:\\Users\\peterb154\\Saved Games\\DCS.openbeta_server\\Slmod\\Chat Logs\\*.txt",
+						"log_group_name": "dcs",
+						"log_stream_name": "ChatLogs"
+					},
+					{
+						"file_path": "C:\\Program Files\\DCS-SimpleRadio-Standalone\\serverlog.txt",
+						"log_group_name": "dcs",
+						"log_stream_name": "srs-serverlog.txt"
+					}
+				]
+			},
+			"windows_events": {
+				"collect_list": [
+					{
+						"event_format": "xml",
+						"event_levels": [
+							"VERBOSE",
+							"INFORMATION",
+							"WARNING",
+							"ERROR",
+							"CRITICAL"
+						],
+						"event_name": "System",
+						"log_group_name": "System",
+						"log_stream_name": "{instance_id}"
+					}
+				]
+			}
+		}
+	},
+	"metrics": {
+		"append_dimensions": {
+			"AutoScalingGroupName": "${aws:AutoScalingGroupName}",
+			"ImageId": "${aws:ImageId}",
+			"InstanceId": "${aws:InstanceId}",
+			"InstanceType": "${aws:InstanceType}"
+		},
+		"metrics_collected": {
+			"LogicalDisk": {
+				"measurement": [
+					"% Free Space"
+				],
+				"metrics_collection_interval": 60,
+				"resources": [
+					"*"
+				]
+			},
+			"Memory": {
+				"measurement": [
+					"% Committed Bytes In Use"
+				],
+				"metrics_collection_interval": 60
+			},
+			"Paging File": {
+				"measurement": [
+					"% Usage"
+				],
+				"metrics_collection_interval": 60,
+				"resources": [
+					"*"
+				]
+			},
+			"PhysicalDisk": {
+				"measurement": [
+					"% Disk Time",
+					"Disk Write Bytes/sec",
+					"Disk Read Bytes/sec",
+					"Disk Writes/sec",
+					"Disk Reads/sec"
+				],
+				"metrics_collection_interval": 60,
+				"resources": [
+					"*"
+				]
+			},
+			"Processor": {
+				"measurement": [
+					"% User Time",
+					"% Idle Time",
+					"% Interrupt Time"
+				],
+				"metrics_collection_interval": 60,
+				"resources": [
+					"*"
+				]
+			},
+			"TCPv4": {
+				"measurement": [
+					"Connections Established"
+				],
+				"metrics_collection_interval": 60
+			},
+			"TCPv6": {
+				"measurement": [
+					"Connections Established"
+				],
+				"metrics_collection_interval": 60
+			},
+			"statsd": {
+				"metrics_aggregation_interval": 60,
+				"metrics_collection_interval": 10,
+				"service_address": ":8125"
+			},
+			"procstat": [
+                {
+                    "exe": "DCS_updater.exe",
+                    "measurement": [
+                        "cpu_usage",
+                        "memory_rss",
+                        "memory_vms"
+                    ]
+                },
+				                {
+                "exe": "DCS.exe",
+                    "measurement": [
+                        "cpu_usage",
+                        "memory_rss",
+                        "memory_vms"
+                    ]
+                },
+                {
+                    "exe": "SR-Server.exe",
+                    "measurement": [
+                        "cpu_usage",
+                        "memory_rss",
+                        "memory_vms"
+                    ]
+				}
+			]
+		}
+	}
+}
